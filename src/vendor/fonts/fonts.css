@@ -1,14 +1,13 @@
 @font-face {
-  font-family: "CabinetGrotesk-Medium";
-  font-weight: 500;
-  font-display: swap;
+  font-family: "Cabinet-Grotesk";
   font-style: normal;
-  src: url("./fonts/CabinetGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  src: url("CabinetGrotesk-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: "CabinetGrotesk-Bold";
-  font-weight: 700;
+  font-family: "Cabinet-Grotesk";
   font-style: normal;
-  src: url("./fonts/CabinetGrotesk-Bold.woff") format("woff");
+  font-weight: 700;
+  src: url("CabinetGrotesk-Bold.woff") format("woff");
 }
