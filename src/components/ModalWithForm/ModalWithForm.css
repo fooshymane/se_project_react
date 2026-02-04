@@ -62,12 +62,19 @@ cursor: pointer;
 .modal__submit-btn {
   margin-top: 32px;
   padding: 8px 16px 8px 16px;
-  color: #fff;
   border: none;
   border-radius: 4px;
   background-color: #0000004d;
   cursor: pointer;
 }
+
+
+.modal__submit-btn:hover {
+  opacity: 0.6;
+}
+
+
+
 
 .modal__label {
   font-weight: 700;
@@ -82,4 +89,9 @@ cursor: pointer;
 
 .modal__legend {
   margin-bottom: 12px;
+}
+
+.modal__radio-group {
+  display: flex;
+  flex-direction: column;
 }

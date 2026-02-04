@@ -11,6 +11,7 @@
   box-sizing: border-box;
   transition: filter 0.3s ease;
   cursor: pointer;
+  align-items: center;
 }
 
 .card__title {

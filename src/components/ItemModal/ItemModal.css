@@ -30,8 +30,12 @@
 
 .modal__footer {
    background-color: #fff;
-  padding: 0 0 32px 32px;
+  padding-top: 20px;
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-bottom: 32px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
