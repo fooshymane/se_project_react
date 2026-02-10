@@ -95,3 +95,20 @@ cursor: pointer;
   display: flex;
   flex-direction: column;
 }
+
+
+.modal__delete-btn {
+  border: none;
+  background: none;
+  color: #ff4d00;
+  font-weight: 700;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.modal__delete-button_hidden {
+  display: none;
+}
