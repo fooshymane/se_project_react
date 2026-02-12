@@ -112,3 +112,7 @@ cursor: pointer;
 .modal__delete-button_hidden {
   display: none;
 }
+
+.modal__radio-input {
+  margin-right: 11px;
+}

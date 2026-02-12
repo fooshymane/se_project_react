@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
-import DeleteConfirmationModal from "../../DeleteConfirmationModal/DeleteConfirmationModal";
+import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import "./App.css";
 import { getWeatherData } from "../../utils/weatherApi";
 import { apiKey } from "../../utils/constants";
