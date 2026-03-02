@@ -59,8 +59,17 @@ cursor: pointer;
   border: none;
 }
 
-.modal__submit-btn {
+.modal__buttons {
   margin-top: 32px;
+}
+
+.modal__buttons_type_row {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.modal__submit-btn {
   padding: 8px 16px 8px 16px;
   border: none;
   border-radius: 4px;
@@ -68,8 +77,20 @@ cursor: pointer;
   cursor: pointer;
 }
 
-
 .modal__submit-btn:hover {
+  opacity: 0.6;
+}
+
+.modal__secondary-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.modal__secondary-btn:hover {
   opacity: 0.6;
 }
 

@@ -39,10 +39,25 @@ align-items: center;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
-.header__add-clothes-btn {
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 12px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.header__add-clothes-btn,
+.header__auth-btn {
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
@@ -51,9 +66,7 @@ align-items: center;
   background-color: transparent;
   cursor: pointer;
   border: none;
-  margin: 0 20px;
-
-
+  margin: 0px;
 }
 
 .header__add-button:hover {

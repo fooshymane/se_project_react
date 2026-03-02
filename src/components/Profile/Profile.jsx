@@ -2,17 +2,22 @@ import "./Profile.css";
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 
-
-function Profile({clothingItems, handleOpenAddGarmentModal }) {
-    return ( 
+function Profile({
+  clothingItems,
+  handleOpenAddGarmentModal,
+  handleOpenItemModal,
+  onSignOut,
+}) {
+  return (
     <main className="profile">
-        <SideBar />
-    <ClothesSection 
-    clothingItems={clothingItems} 
-     handleOpenAddGarmentModal={handleOpenAddGarmentModal}
-    />
+      <SideBar onSignOut={onSignOut} />
+      <ClothesSection
+        clothingItems={clothingItems}
+        handleOpenAddGarmentModal={handleOpenAddGarmentModal}
+        handleOpenItemModal={handleOpenItemModal}
+      />
     </main>
-);
+  );
 }
 
-    export default Profile;
+export default Profile;

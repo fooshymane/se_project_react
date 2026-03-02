@@ -9,22 +9,28 @@ function getItems() {
 }
 
 
-function addItem({ name, imageUrl, weather }) {
-    return fetch(`${baseUrl}/items`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
+function addItem({ name, imageUrl, weather }, token) {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers,
     body: JSON.stringify({ name, imageUrl, weather }),
-    }).then(processServerResponse);
-
+  }).then(processServerResponse);
 }
 
-
-
-function deleteItem(_id) {
+function deleteItem(_id, token) {
+  const headers = {};
+  if (token) {
+    headers.authorization = `Bearer ${token}`;
+  }
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
+    headers,
   }).then(processServerResponse);
 }
 

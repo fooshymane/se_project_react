@@ -8,7 +8,11 @@ function ModalWithForm({
   title,
   buttonText,
   name,
+  secondaryButtonText,
+  onSecondaryClick,
 }) {
+  const hasSecondary = secondaryButtonText && onSecondaryClick;
+
   return (
     <div className={`modal ${isOpen ? " modal_is-opened" : ""}`}>
       <div className="modal__container modal__container_type_form">
@@ -21,9 +25,22 @@ function ModalWithForm({
         <form onSubmit={handleSubmit} name={name} className="modal__form">
           {children}
 
-          <button type="submit" className="modal__submit-btn">
-            {buttonText}
-          </button>
+          <div
+            className={`modal__buttons${hasSecondary ? " modal__buttons_type_row" : ""}`}
+          >
+            <button type="submit" className="modal__submit-btn">
+              {buttonText}
+            </button>
+            {hasSecondary && (
+              <button
+                type="button"
+                className="modal__secondary-btn"
+                onClick={onSecondaryClick}
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </div>
