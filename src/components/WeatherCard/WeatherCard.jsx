@@ -9,9 +9,9 @@ function WeatherCard({weatherData}) {
   return (
     <section className="weather-card">
       <img 
-      src={weatherConditionImages ["day"] [weatherData.weatherCondition]?.image} 
-      alt="Cloudy weather" 
-      className="weather-card_image" 
+        src={weatherConditionImages["day"][weatherData.weatherCondition]?.image ?? weatherConditionImages["day"].clouds.image} 
+        alt="Weather" 
+        className="weather-card_image" 
       />
       <p className="weather-card__temp">
         {weatherData.temp[contextValue.currentTempUnit]}&deg; {" "}

@@ -27,7 +27,7 @@ const apiKey = "0ccc4fe9afe40c8cbd4e7c5320b6005b";
         
         snow: {
             name: "snow",
-            image: new URL ("../asssets/day/snow.svg", import.meta.url).href,
+            image: new URL("../assets/day/snow.svg", import.meta.url).href,
 
         },
         
