@@ -9,6 +9,27 @@
     gap: 16px;
 }
 
+.sidebar__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar__avatar-placeholder {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.sidebar__update-profile,
 .sidebar__sign-out {
     margin-top: 8px;
     padding: 0;
@@ -21,6 +42,7 @@
     opacity: 0.6;
 }
 
+.sidebar__update-profile:hover,
 .sidebar__sign-out:hover {
     opacity: 1;
 }

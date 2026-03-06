@@ -15,7 +15,8 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { getItems, addItem, deleteItem } from "../../utils/api";
-import { signup, signin, checkToken } from "../../utils/auth";
+import { signup, signin, checkToken, updateProfile } from "../../utils/auth";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 function App() {
   const [clothingItems, setClothingItems] = useState([]);
@@ -46,6 +47,10 @@ function App() {
 
   function handleOpenDeleteConfirmation() {
     setActiveModal("delete-card");
+  }
+
+  function handleOpenEditProfileModal() {
+    setActiveModal("edit-profile-modal");
   }
 
   function closeActiveModal() {
@@ -118,6 +123,16 @@ function App() {
     setCurrentUser(null);
   }
 
+  function handleEditProfileSubmit({ name, avatar }) {
+    const token = localStorage.getItem("jwt");
+    updateProfile({ name, avatar }, token)
+      .then((user) => {
+        setCurrentUser(user);
+        closeActiveModal();
+      })
+      .catch(console.error);
+  }
+
   useEffect(() => {
     getWeatherData()
       .then((data) => {
@@ -180,6 +195,7 @@ function App() {
                     handleOpenItemModal={handleOpenItemModal}
                     handleOpenAddGarmentModal={handleOpenAddGarmentModal}
                     onSignOut={handleSignOut}
+                    onEditProfile={handleOpenEditProfileModal}
                   />
                 </ProtectedRoute>
               }
@@ -215,6 +231,12 @@ function App() {
             onClose={closeActiveModal}
             handleLoginSubmit={handleLoginSubmit}
             onSwitchToRegister={handleOpenRegisterModal}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit-profile-modal"}
+            onClose={closeActiveModal}
+            currentUser={currentUser}
+            handleEditProfileSubmit={handleEditProfileSubmit}
           />
         </div>
       </CurrentUserContext.Provider>

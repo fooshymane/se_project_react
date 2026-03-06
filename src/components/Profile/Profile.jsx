@@ -7,10 +7,11 @@ function Profile({
   handleOpenAddGarmentModal,
   handleOpenItemModal,
   onSignOut,
+  onEditProfile,
 }) {
   return (
     <main className="profile">
-      <SideBar onSignOut={onSignOut} />
+      <SideBar onSignOut={onSignOut} onEditProfile={onEditProfile} />
       <ClothesSection
         clothingItems={clothingItems}
         handleOpenAddGarmentModal={handleOpenAddGarmentModal}

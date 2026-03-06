@@ -34,4 +34,15 @@ function checkToken(token) {
   }).then(processServerResponse);
 }
 
-export { signup, signin, checkToken };
+function updateProfile({ name, avatar }, token) {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name, avatar }),
+  }).then(processServerResponse);
+}
+
+export { signup, signin, checkToken, updateProfile };
