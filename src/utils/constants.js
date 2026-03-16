@@ -1,7 +1,16 @@
 const coordinates = { lat: "40.179299", lon: "-75.540995"};
 const apiKey = "0ccc4fe9afe40c8cbd4e7c5320b6005b";
 
- const weatherConditionImages = {
+ 
+
+const baseUrl = process.env.NODE_ENV === "production" 
+  ? "https://api.wtwrharfoush.jumpingcrab.com"
+  : "http://localhost:3001";
+
+
+
+
+const weatherConditionImages = {
     day: {
         
         clear: {
@@ -79,4 +88,4 @@ const apiKey = "0ccc4fe9afe40c8cbd4e7c5320b6005b";
     },
 }
 
-export { coordinates, apiKey, weatherConditionImages };
+export { coordinates, apiKey, weatherConditionImages, baseUrl };

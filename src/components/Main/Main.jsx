@@ -17,7 +17,7 @@ console.log (weatherData);
      (item) => item.weather === weatherData.weatherType)
 
 
-return (
+  return (
     <main className="main">
       <WeatherCard weatherData={weatherData}/>
       <p className="main__text">Today is  {weatherData.temp[contextValue.currentTempUnit]}&deg; {" "}
