@@ -34,4 +34,22 @@ function deleteItem(_id, token) {
   }).then(processServerResponse);
 }
 
-export { getItems, addItem, deleteItem };
+function addCardLike(_id, token) {
+  return fetch(`${baseUrl}/items/${_id}/likes`, {
+    method: "PUT",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then(processServerResponse);
+}
+
+function removeCardLike(_id, token) {
+  return fetch(`${baseUrl}/items/${_id}/likes`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then(processServerResponse);
+}
+
+export { getItems, addItem, deleteItem, addCardLike, removeCardLike };

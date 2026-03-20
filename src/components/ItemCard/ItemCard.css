@@ -15,15 +15,38 @@
 }
 
 .card__title {
-  position: absolute;
   margin: 0;
-  top: 15px;
   border-radius: 4px;
   background-color: #ffffff;
   color: #00000099;
   padding: 2px 12px;
   font-size: 16px;
-  
+}
+
+.card__top-row {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.card__like-button {
+  pointer-events: auto;
+  position: absolute;
+  right: 12px;
+  top: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.card__like-icon {
+  width: 18px;
+  height: 15px;
 }
 
 .card__image {

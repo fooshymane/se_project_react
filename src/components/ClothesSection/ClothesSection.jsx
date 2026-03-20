@@ -3,7 +3,12 @@ import "./ClothesSection.css";
 import ItemCard from "../ItemCard/ItemCard";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function ClothesSection({ clothingItems, handleOpenItemModal, handleOpenAddGarmentModal }) {
+function ClothesSection({
+  clothingItems,
+  handleOpenItemModal,
+  handleOpenAddGarmentModal,
+  onCardLike,
+}) {
   const currentUser = useContext(CurrentUserContext);
   const currentUserItems = currentUser
     ? clothingItems.filter((item) => item.owner === currentUser._id)
@@ -26,6 +31,7 @@ function ClothesSection({ clothingItems, handleOpenItemModal, handleOpenAddGarme
             key={item._id}
             data={item}
             onCardClick={handleOpenItemModal}
+            onCardLike={onCardLike}
           />
         ))}
       </ul>

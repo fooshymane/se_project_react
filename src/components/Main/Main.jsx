@@ -7,7 +7,7 @@ import "./Main.css";
 
 
 
-function Main({ clothingItems, handleOpenItemModal, weatherData }) {
+function Main({ clothingItems, handleOpenItemModal, weatherData, onCardLike }) {
   const contextValue = useContext(CurrentTemperatureUnitContext);
  
 console.log (weatherData);
@@ -29,6 +29,7 @@ console.log (weatherData);
           key={item._id} 
           data={item} 
           onCardClick={handleOpenItemModal}
+          onCardLike={onCardLike}
           />
          )})}
       </ul>

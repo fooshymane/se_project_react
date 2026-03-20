@@ -6,6 +6,7 @@ function Profile({
   clothingItems,
   handleOpenAddGarmentModal,
   handleOpenItemModal,
+  onCardLike,
   onSignOut,
   onEditProfile,
 }) {
@@ -16,6 +17,7 @@ function Profile({
         clothingItems={clothingItems}
         handleOpenAddGarmentModal={handleOpenAddGarmentModal}
         handleOpenItemModal={handleOpenItemModal}
+        onCardLike={onCardLike}
       />
     </main>
   );

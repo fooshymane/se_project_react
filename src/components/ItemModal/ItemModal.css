@@ -7,10 +7,11 @@
 
 
 .modal__image {
-  display: block;
-    width: 100%;
-  height: 100%;
+    display: block;
   object-fit: cover;
+  width: 100%;
+  max-width: 496px;
+  height: 498px;
 }
 
 .modal__close-btn {

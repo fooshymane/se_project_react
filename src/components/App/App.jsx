@@ -14,7 +14,13 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { getItems, addItem, deleteItem } from "../../utils/api";
+import {
+  getItems,
+  addItem,
+  deleteItem,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api";
 import { signup, signin, checkToken, updateProfile } from "../../utils/auth";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
@@ -81,6 +87,23 @@ function App() {
       .then(() => {
         setClothingItems((prev) => prev.filter((i) => i._id !== item._id));
         closeActiveModal();
+      })
+      .catch(console.error);
+  }
+
+  function handleCardLike({ _id, isLiked }) {
+    const token = localStorage.getItem("jwt");
+    if (!token) {
+      return;
+    }
+
+    const likeRequest = isLiked ? removeCardLike : addCardLike;
+
+    likeRequest(_id, token)
+      .then((updatedItem) => {
+        setClothingItems((prev) =>
+          prev.map((item) => (item._id === updatedItem._id ? updatedItem : item))
+        );
       })
       .catch(console.error);
   }
@@ -180,6 +203,7 @@ function App() {
                   weatherData={weatherData}
                   clothingItems={clothingItems}
                   handleOpenItemModal={handleOpenItemModal}
+                  onCardLike={handleCardLike}
                 />
               }
             />
@@ -194,6 +218,7 @@ function App() {
                     clothingItems={clothingItems}
                     handleOpenItemModal={handleOpenItemModal}
                     handleOpenAddGarmentModal={handleOpenAddGarmentModal}
+                    onCardLike={handleCardLike}
                     onSignOut={handleSignOut}
                     onEditProfile={handleOpenEditProfileModal}
                   />
